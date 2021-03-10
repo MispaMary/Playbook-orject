@@ -3,9 +3,10 @@ Ec2Instance:
  Type: 'AWS::EC2::Instance'
  Properties:
    SecurityGroups:
-     - !Ref InstanceSecurityGroup
-   KeyName: udacity
+    - !Ref InstanceSecurityGroup
+   KeyName: webserver1
    ImageId: 'ami-0ca5c3bd5a268e7db'
+
 InstanceSecurityGroup:
  Type: 'AWS::EC2::SecurityGroup'
  Properties:
@@ -15,3 +16,7 @@ InstanceSecurityGroup:
        FromPort: '22'
        ToPort: '22'
        CidrIp: 0.0.0.0/0
+   securityGroupOutgress:
+     - IpProtocol: tcp
+       FromPort: 22
+       ToPort: 65535
