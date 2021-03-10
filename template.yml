@@ -3,9 +3,9 @@ Ec2Instance:
  Type: 'AWS::EC2::Instance'
  Properties:
    SecurityGroups:
-    - !Ref InstanceSecurityGroup
+    - !Ref 'InstanceSecurityGroup'
    KeyName: webserver1
-   ImageId: 'ami-0ca5c3bd5a268e7db'
+   ImageId: 'ami-031b673f443c2172c '
 
 InstanceSecurityGroup:
  Type: 'AWS::EC2::SecurityGroup'
