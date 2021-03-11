@@ -1,7 +1,7 @@
 
 version: 2.1
 
-Jobs:
+jobs:
   create_infrastructure:
     docker:
       - image: amazon/aws-cli
@@ -9,7 +9,7 @@ Jobs:
       - checkout
       - run:
           name: Ensure backend infrastructure exist
-          command: aws cloudformation deploy --template-file template.yml --stack-name my-stack
+          command: aws cloudformation deploy --template-file .circleci/template.yml --stack-name my-stack
 
 workflows:
   my_workflow:
